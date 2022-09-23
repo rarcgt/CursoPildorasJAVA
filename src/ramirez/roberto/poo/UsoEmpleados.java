@@ -20,18 +20,29 @@ public class UsoEmpleados {
 		
 		Juan.setIncentivo(200);
 		
-		Empleados[] losEmpleados=new Empleados[5];
+		Empleados[] losEmpleados=new Empleados[6];
 		
 		losEmpleados[0]=new Empleados("Antonio", 2300.5,2008,8,9);
 		losEmpleados[1]=new Empleados("Carlos", 5000.5,2007,6,5);
 		losEmpleados[2]=new Empleados("Maria", 2500.5,2006,11,7);
 		losEmpleados[3]=new Empleados("Ana", 7000.5,2009,5,3);
 		losEmpleados[4]=Juan; //Principio de sustitucion...! (ES UN jefe SIEMPRE un	 empleado) //UPCASTING O CASTING IMPLICITO
+		losEmpleados[5]=new Jefes("Isabel",8000,2007,4,2);
+		
+		Jefes Isabel=(Jefes)losEmpleados[5];
+		
+		Isabel.setIncentivo(500);
+		
+		/*Empleados Patricia=new Jefes("Patricia",2500,2007,5,6);
+		
+		Jefes PatriciaDirectora=(Jefes)Patricia;*/
+		
+		
 		
 		
 		for(int i=0;i<losEmpleados.length;i++) {
 			
-			System.out.println(losEmpleados[i].getDatosEmpleado()+" y un salario de: "+losEmpleados[i].getDatosEmpleado());
+			System.out.println(losEmpleados[i].getDatosEmpleado()+" y un salario de: "+losEmpleados[i].getSueldo());
 			
 		}
 		
@@ -42,7 +53,7 @@ public class UsoEmpleados {
 	
 class Empleados{
 	
-	//El nombre no debe cambiar..
+	//El nombre no debe cambiar.....
 	private final String nombre;
 	
 	private double sueldo;
